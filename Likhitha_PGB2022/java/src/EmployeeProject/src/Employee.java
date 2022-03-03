@@ -18,14 +18,19 @@ public class Employee {
  }
  
  
+ public enum Gender{
+	 MALE, FEMALE
+ }
  
+ public Gender gender;
  
- public Employee(String name, int empid, String address, int sal) //Parameter constructor
+ public Employee(String name, int empid, String address, int sal,Gender g) //Parameter constructor
  {
 	 this.name=name;
 	 this.empid=empid;
 	 this.address=address;
 	 this.salary=sal;
+	 this.gender=g;
  }
  
  @Override
@@ -62,6 +67,10 @@ public class Employee {
 	 return empid;
  }
  
+ public Gender getGender()
+ {
+	 return gender;
+ }
  public void setEmpid(int id)
  {
 	 this.empid=id;
@@ -81,6 +90,12 @@ public class Employee {
 	 this.address=add;
  }
  
+ public void setGender(Gender g)
+ {
+	 this.gender=g;
+ }
+ 
+ 
  public static void main(String[] args)
  {
 	 Employee emp= new Employee(); //object created
@@ -88,10 +103,11 @@ public class Employee {
 	 emp.setName("Rama");
 	 emp.setSalary(20000);
 	 emp.setAddress("Delhi");
+	 emp.setGender(Gender.MALE);
 	 
-	 Employee emp1= new Employee("John", 1 , "Mumbai", 15000);
-	 Employee emp2= new Employee("John", 1, "Mumbai", 15000);
-	 Employee emp3= new Employee("Ram", 2, "Delhi", 25000);
+	 Employee emp1= new Employee("John", 1 , "Mumbai", 15000,Gender.MALE);
+	 Employee emp2= new Employee("John", 1, "Mumbai", 15000,Gender.MALE);
+	 Employee emp3= new Employee("Rama", 2, "Delhi", 25000,Gender.FEMALE);
 	 
 	 int getsal = emp.getSal(); //Getters
 	 int getempid = emp.getEmpid();
@@ -100,6 +116,7 @@ public class Employee {
 	 System.out.println(emp.name);
 	 System.out.println(emp.salary);
 	 System.out.println(emp.address);
+	 System.out.println(emp.gender);
 	 
 	 System.out.println(getsal);
 	 System.out.println(getempid);
