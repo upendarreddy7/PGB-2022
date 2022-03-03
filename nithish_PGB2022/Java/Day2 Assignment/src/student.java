@@ -15,20 +15,20 @@ public class student{
 	public void setname(String name){
 		this.name=name;
 	}
-	public void getname(){
-		System.out.println(name);
+	public String getname(){
+		return name;
 	}
 	public void setmarks(int marks){
 		this.marks=marks;
 	}
-	public void getmarks(){
-		System.out.println(marks);
+	public int getmarks(){
+		return marks;
 	}
 	public void setrollno(int rollno){
 		this.rollno=rollno;
 	}
-	public void getrollno(){
-		System.out.println(rollno);
+	public int getrollno(){
+		return rollno;
 	}
 	
 	public boolean equals(String name,int rollno,int marks) {
