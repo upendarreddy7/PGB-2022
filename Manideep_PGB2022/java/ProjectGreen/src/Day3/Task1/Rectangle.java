@@ -1,5 +1,5 @@
-package Task1;
-import Task1.Drawable;
+package Day3.Task1;
+import Day3.Task1.Drawable;
 public  class Rectangle implements Drawable{
 	public void draw()
 	{

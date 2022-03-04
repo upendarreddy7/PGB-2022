@@ -1,15 +1,20 @@
-package Task2;
+package Day3.Task2;
 import java.util.*;
+import java.util.stream.Collectors;
 public class Collections {
 	public static void main(String args[])
 	{
 		System.out.println("List Collection");
-		List<String> l=new ArrayList<String>();
-		l.add("A");  
+		ArrayList<String> l=new ArrayList<String>();
 		l.add("B");  
+		l.add("A");  
 		l.add("C");
+		System.out.println("Before Sorting ");
 		 for(String alpha:l)
 		  System.out.println(alpha);
+		 System.out.println("After Sorting ");
+		 List<String> sortedList =l.stream().sorted().collect(Collectors.toList());
+		 sortedList.forEach(System.out::println);  
 			System.out.println("Hash Map Collection");
 		 HashMap<Integer,String> map=new HashMap<Integer,String>();//Creating HashMap    
 		   map.put(65,"A"); 
