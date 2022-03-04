@@ -1,6 +1,6 @@
-package util;
+package day2;
 
-public class view<T> {
+public class View<T> {
 	private T d;
 	public void addData(T d) {
 		this.d = d;
@@ -9,15 +9,14 @@ public class view<T> {
 		return d;
 	}
 	public static void main(String[] args) {
-		view<Integer> integer = new view<Integer>();
-		view<String> String = new view<String>();
+		View<Integer> integer = new View<Integer>();
+		View<String> String = new View<String>();
 		
 		integer.addData(10);
 		String.addData("This is a String");
 		
 		System.out.println(integer.getData());
 		System.out.println(String.getData());
-		
 	}
 
 }

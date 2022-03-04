@@ -1,4 +1,4 @@
-package util;
+package day2.util;
 
 public class factorial {
 	
