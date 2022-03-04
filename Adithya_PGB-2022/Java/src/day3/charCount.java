@@ -6,6 +6,7 @@ class charCount{
 		HashMap<Character,LinkedList<Integer>>hm=new HashMap();
 		for(int i=0;i<s.length();i++){
 			char c=s.charAt(i);
+			
 		 	LinkedList l;
 			if(!hm.containsKey(c)){
 				l=new LinkedList();
