@@ -1,6 +1,6 @@
-package util;
+package day2Assignment.util;
 
-public class fact {
+public class Fact {
 	public static int factorialrecursion(int n) {
 		if(n==1) {
 			return 1;
