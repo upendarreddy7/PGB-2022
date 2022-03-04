@@ -188,14 +188,9 @@ class student extends Human implements Person{
 		
 		// Initialize a Collections Map
 		Map<String, student> studentmap = new HashMap<String, student>();
-		studentmap.put("A", s1);
-		studentmap.put("B", s2);
-		studentmap.put("B", s3);
-		studentmap.put("C", s4);
+		studentmap.put("A", s4);
 		studentmap.put("B", s5);
-		studentmap.put("A", s6);
-		studentmap.put("C", s7);
-		studentmap.put("C", s8);
+		studentmap.put("C", s6);
 		
 		
         // Iterate and Print List
