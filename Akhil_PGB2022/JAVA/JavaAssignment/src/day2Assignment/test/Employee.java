@@ -1,6 +1,6 @@
-package test;
+package day2Assignment.test;
 
-class Employee {
+public class Employee {
 	private int empId;
 	private String empName;
 	private String email;
@@ -59,5 +59,3 @@ class Employee {
 		System.out.println(id+" "+name+" "+email);
 	}
 }
-
-

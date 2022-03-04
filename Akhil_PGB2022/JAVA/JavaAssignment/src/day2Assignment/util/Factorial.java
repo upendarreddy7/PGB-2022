@@ -1,4 +1,4 @@
-package util;
+package day2Assignment.util;
 
 public class Factorial {
 	public static int  recursiveFunction(int x) {
