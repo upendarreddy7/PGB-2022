@@ -1,4 +1,4 @@
-package Task1;
+package Task_1;
 
 // Interface Class
 interface vehicle {
