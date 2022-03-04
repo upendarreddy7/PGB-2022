@@ -1,16 +1,17 @@
 #####################################################
 
 char_Count.java Output :
-
+```
   {a=[5], r=[4], D=[0], e=[2, 3], h=[1], j=[6]}
   {A=[0], h=[2], i=[3], k=[1], l=[4]}
   {A=[0], s=[4], e=[3], v=[2], h=[5], n=[1]}
   {a=[1, 3], B=[0], i=[5], j=[4], l=[2]}
+```
 
 #####################################################
 
 student.java Output :
-
+```
   Student Number using getNumber() : 123
   Student Equals (Override): true
   Student Equals (Override): false
@@ -41,4 +42,4 @@ student.java Output :
   Name : Student3, ID : 1003
   Name : Student2, ID : 1002
   Name : Student1, ID : 1001
-
+```
