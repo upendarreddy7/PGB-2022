@@ -2,9 +2,12 @@
 
 Table java class
 
+
 Input: 
          Select type of material for Table : 1. wood 2. Metal 3.Plastic 
+         
          1
+         
          Select 1. foldable 2.non- foldable 
          2
         
