@@ -1,4 +1,5 @@
-package Task_3;
+package day3;
+
 import java.util.*;
 
 public class char_Count {

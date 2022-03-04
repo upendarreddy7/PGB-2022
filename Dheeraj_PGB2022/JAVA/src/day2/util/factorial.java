@@ -1,4 +1,4 @@
-package Task_2;
+package day2.util;
 
 public class factorial {
 	
