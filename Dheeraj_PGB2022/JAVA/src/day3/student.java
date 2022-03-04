@@ -24,7 +24,6 @@ abstract class Human {
 }
 
 
-
 //Concrete class
 class student extends Human implements Person{
 	
@@ -167,36 +166,55 @@ class student extends Human implements Person{
         // Access the Concrete class methods
         System.out.println("Name by accessing concrete class method : " + cc.name("Noname"));
         
+        student s4 = new student(1001, "Student1");
+        student s5 = new student(1002, "Student2");
+        student s6 = new student(1003, "Student3");
+        student s7 = new student(1004, "Student4");
+        student s8 = new student(1005, "Student5");
+        
+        
         // Initialize a Collections List
         List<student> studentlist=new ArrayList<>();
-        studentlist.add(new student(1001, "Student1"));
-        studentlist.add(new student(1002, "Student2"));
-        studentlist.add(new student(1003, "Student3"));
+        studentlist.add(s4);
+        studentlist.add(s5);
+        studentlist.add(s6);
+        studentlist.add(s7);
 		
         // Initialize a Collections HashSet
 		Set<student> studentset=new HashSet<>();
-		studentset.add(new student(1069, "Student7"));
-		studentset.add(new student(1070, "Student8"));
-		studentset.add(new student(1071, "Student9"));
+		studentset.add(s6);
+		studentset.add(s7);
+		studentset.add(s8);
 		
 		// Initialize a Collections Map
 		Map<String, student> studentmap = new HashMap<String, student>();
 		studentmap.put("A", s1);
 		studentmap.put("B", s2);
 		studentmap.put("B", s3);
+		studentmap.put("C", s4);
+		studentmap.put("B", s5);
+		studentmap.put("A", s6);
+		studentmap.put("C", s7);
+		studentmap.put("C", s8);
 		
 		
         // Iterate and Print List
-        for (student name : studentlist)
+    	System.out.println("Printing Student's ID List :");
+        for (student name : studentlist) {
             System.out.println(name.id);
+        }
         
         // Iterate and Print HashSet
-        for (student s : studentset)
+    	System.out.println("Printing Student's ID Set :");
+        for (student s : studentset) {
             System.out.println(s.id);
+        }
         
         // Iterate and Print Map
-        for (Map.Entry <String, student>m : studentmap.entrySet())
+        System.out.println("Printing Student's ID and Names Using Map :");
+        for (Map.Entry <String, student>m : studentmap.entrySet()) {
         	System.out.println(m.getKey() + " " + m.getValue().name);
+        }
         
         // Sort the Collections of list
         Collections.sort(studentlist, new Comparator<student>(){
@@ -207,11 +225,8 @@ class student extends Human implements Person{
         }
        );
         
-        for(int i=0;i<studentlist.size();i++) {
-        	System.out.println(studentlist.get(i).id+" : "+studentlist.get(i).name);
-        }
-        
         // Java Stream to iterate the list
+        System.out.println("Printing List using Java Stream");
         studentlist.stream().forEach((a)->System.out.println("Name : "+a.name+", ID : "+a.id));
         
     }
