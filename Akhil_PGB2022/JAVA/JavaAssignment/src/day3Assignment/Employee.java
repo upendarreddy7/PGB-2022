@@ -55,17 +55,17 @@ class Employee extends Worker{
 		hm.put(new Employee(2,"Shyam"),"Hyderabad");
 		hm.put(new Employee(3,"Ram"),"Hyderabad");
 		hm.put(new Employee(4,"Nithish"),"Chennai");
-		
+		System.out.println();
 		System.out.println("list elements: ");
 		for(Employee emp:lst) {
 			System.out.println(emp.empId+" "+emp.empName);
 		}
-		
+		System.out.println();
 		System.out.println("Set elements: ");
 		for(Employee emp:set) {
 			System.out.println(emp.empId+" "+emp.empName);
 		}
-		
+		System.out.println();
 		System.out.println("Map elements: ");
 		for(Map.Entry<Employee, String>f:hm.entrySet()) {
 			System.out.println(f.getKey().empId+" "+f.getKey().empName+" "+f.getValue());
@@ -77,7 +77,7 @@ class Employee extends Worker{
 			}
 		});
 		
-		
+		System.out.println();
 		System.out.println("Printing list using Stream after sorting");
 		lst.stream().forEach((c)->System.out.println(c.empId+" "+c.empName));
 	}
