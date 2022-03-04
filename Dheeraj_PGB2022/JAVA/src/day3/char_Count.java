@@ -28,6 +28,7 @@ public class char_Count {
         slist.add("Balaji");
         
         for (String name : slist) {
+        	System.out.println(name);
             System.out.println(count(name));
         }
 		
