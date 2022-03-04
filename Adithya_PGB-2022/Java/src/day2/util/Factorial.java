@@ -1,5 +1,4 @@
-package util;
-
+package day2.util;
 class factorial_funs{
 	int recursive(int n){
 		if(n==1){
@@ -15,7 +14,7 @@ class factorial_funs{
 		return ans;
 	}
 }
-public class factorial{
+public class Factorial{
 	public static void main(String[]args) {
 		factorial_funs a=new factorial_funs();
 		System.out.println("recursive "+a.recursive(9));

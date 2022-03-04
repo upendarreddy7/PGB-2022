@@ -1,4 +1,4 @@
-package util;
+package day2;
 
 class g<t>{
 	t data;
@@ -9,7 +9,7 @@ class g<t>{
 		return data;
 	}
 }
-public class generic{
+public class Generic{
 	public static void main(String[]args) {
 		g <Integer>a=new g();
 		g <String> b=new g();

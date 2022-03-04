@@ -1,5 +1,4 @@
-package util;
-
+package day2;
 public class Student {
 
 	int rollno;
