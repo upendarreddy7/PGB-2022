@@ -3,9 +3,9 @@ package day3;
 import java.util.*;
 
 public class char_Count {
-	public static void main(String[] args) {
+	
+	public static String count(String s) {
 		Map<Character, List<Integer>> dict = new HashMap<>();
-		String s = "Hello World";
 		s = s.replaceAll(" ", "");
 		for (int i = 0; i < s.length(); i++) {
 			char id =  s.charAt(i);
@@ -17,7 +17,20 @@ public class char_Count {
 		    }
 	        // System.out.print(s.charAt(i) + " ");
 	    }
-		System.out.println(dict.toString());
+		return dict.toString();
+	}
+	
+	public static void main(String[] args) {
+        List<String> slist=new ArrayList<>();
+        slist.add("Dheeraj");
+        slist.add("Akhil");
+        slist.add("Anvesh");
+        slist.add("Balaji");
+        
+        for (String name : slist) {
+            System.out.println(count(name));
+        }
+		
 	}
 	
 }
