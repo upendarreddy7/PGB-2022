@@ -1,6 +1,8 @@
 package day4;
 import day3.*;
 
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 final class InvalidNameException extends Exception {
@@ -9,8 +11,16 @@ final class InvalidNameException extends Exception {
 	}
 };
 
+interface Average {
+	abstract double calculate(Employee e);
+}
+
 public class custom_input extends Training{
 	static Scanner input = new Scanner(System.in); 
+	static String Topicnames[] = {"Java", "Python", "Javascript"};
+	static int empid = 1;
+	static String empName = "Admin";
+	static Integer sum = 0;
 	
 	static void validate(String name) throws InvalidNameException{    
 		if(name.length() <= 2){  
@@ -18,27 +28,73 @@ public class custom_input extends Training{
 			throw new InvalidNameException("Invalid Name!! Try again");
 	    }
 	}    
-	
-	static void Employee_data() throws InvalidNameException {
-	    System.out.print("Enter Name : ");
+
+	static String TakeEmpName(String empName) throws NullPointerException, InvalidNameException{
+		System.out.print("Enter Name : ");
 	    String name = input.nextLine();
-	    validate(name);
+	    if (!empName.equals(name)){
+	    	validate(name);
+	    } else {
+	    	throw new NullPointerException("Name Is Empty!!");
+	    }
+	    return name;
+	}
+	    
+	
+	static int TakeEmpID(int empid, String empName) throws InvalidNameException {
+		String name = TakeEmpName(empName);
 	    System.out.print("Enter ID : ");
 	    int id = Integer.parseInt(input.nextLine());
-	    int sno = Training.add_Employee_to_list(id, name);
+	    int sno = Training.add_Employee_to_list(id/empid, name);
 	    System.out.println("Added");
+	    return sno;
+	}
+
+	public static double averageMarks(Employee emp) {
+		Average a = (Employee e) -> {
+			if(!e.marksSheet.isEmpty()) {
+				for (Map.Entry <String, Integer>topic : e.marksSheet.entrySet()) {
+			        sum += topic.getValue();
+			    }
+			    return (sum.doubleValue() / e.marksSheet.size());
+			}
+			return sum;
+		};
+		return a.calculate(emp);
+	}
+	
+	static void Employee_data(int empid, String empName) throws InvalidNameException {
+		
+		int sno = TakeEmpID(empid, empName);
+		
 	    Training.print_Employeelist();
-	    Training.Employeelist.get(sno).assigntask("Test");
+			for(int i = 0;i < Topicnames.length;i++) {
+				System.out.print("Enter Marks for "+Topicnames[i]+" : ");
+			    int marks = input.nextInt();
+			    Training.Employeelist.get(sno).giveMarks(Topicnames[i], marks);
+			}
+		System.out.println("Total Marks : "+averageMarks(Training.Employeelist.get(sno)));
+		input.nextLine();
+		Training.Employeelist.get(sno).assigntask("Test");
 	    Training.Employeelist.get(sno).listTasks();
 	}
 	
 	public static void main(String[] args) {
 	    for(int i = 0;i<30;i++) {
 	    	try {
-	    		Employee_data();
+		    	if(i == 2) {
+		    		Employee_data(0, empName);
+		    	} else if (i == 1) {
+		    		Employee_data(empid, null);
+		    	} else {
+		    		Employee_data(empid, empName);
+		    	}
 	    	} 
 	    	catch (NumberFormatException e) {
 	    		System.out.println("Enter a valid ID!!");
+	    	}
+	    	catch (NullPointerException e) {
+	    		System.out.println("NullPointerException Occured");
 	    	}
 	    	catch (InvalidNameException e) {
 	    		continue;

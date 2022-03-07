@@ -28,7 +28,7 @@ abstract class Intern extends Student{
 
 //Concrete class
 public class Employee extends Intern implements Progress{
-	static Map<String, Integer> marksSheet = new HashMap<String, Integer>();
+	public static Map<String, Integer> marksSheet = new HashMap<String, Integer>();
 	
 	public Employee(int id, String name) {
 		super(id, name);
