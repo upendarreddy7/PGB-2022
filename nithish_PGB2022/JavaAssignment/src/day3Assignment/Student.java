@@ -1,6 +1,5 @@
 package day3Assignment;
 
-import java.util.List;
 import java.util.*;
 
 interface Person{
