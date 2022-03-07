@@ -15,8 +15,10 @@ class EmpReg implements Runnable{
         this.Id = id;
     } 
 	
+    // Defining Run for Runnable Interface
 	public void run() {
 		Random rand = new Random();
+		// Use Thread Pool to Register Employees and assign them to Different Groups
 		for (int i = Id;i < Id+10;i++ ) {
 			grp = givenList.get(rand.nextInt(givenList.size()));
 			Training.assign_to_group(grp, i,"Employee"+i);
@@ -29,7 +31,7 @@ class EmpReg implements Runnable{
 
 public class BatchEmployeeRegister{
 	
-	static final int MAX_T = 10;
+	static final int max_threads = 10;
 	
 	public static void main(String[] args) throws InterruptedException {
 		
@@ -37,18 +39,21 @@ public class BatchEmployeeRegister{
         Runnable r2 = new EmpReg(1011);    
         Runnable r3 = new EmpReg(1021);
           
-        // creates a thread pool with MAX_T no. of 
-        // threads as the fixed pool size(Step 2)
-        ExecutorService pool = Executors.newFixedThreadPool(MAX_T);  
+        // Create a Thread Pool With max 10 Threads
+        ExecutorService pool = Executors.newFixedThreadPool(max_threads);  
          
-        // passes the Task objects to the pool to execute (Step 3)
+        // Create Multiple Threads To Register Employees
         pool.execute(r1);
         pool.execute(r2);
         pool.execute(r3);
         
-        // pool shutdown ( Step 4)
+        // ThreadPool ShutDown
         pool.shutdown();  
+        
+        // Sleep to Update the Groups List
         Thread.sleep(10);
+        
+        // Print The Updated Employees Data after Using ThreadPool
         Training.print_group_data();
 	}
 }
