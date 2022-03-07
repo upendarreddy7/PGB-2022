@@ -1,4 +1,5 @@
-package test;
+package day2assignment.test;
+
 class genericdata<T> {
 	private T data;
 	genericdata(T obj) {this.data=obj;}

@@ -1,4 +1,4 @@
-package util;
+package day2assignment.util;
 
 public class Fact {
 	public static int factorialrec(int n)
