@@ -22,7 +22,7 @@ class EmpReg implements Runnable{
 		for (int i = Id;i < Id+10;i++ ) {
 			grp = givenList.get(rand.nextInt(givenList.size()));
 			Training.assign_to_group(grp, i,"Employee"+i);
-			System.out.println(Training.Groups.get(grp).size());
+			// System.out.println(Training.Groups.get(grp).size());
 		}
 	}
 	
