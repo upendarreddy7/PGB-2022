@@ -1,4 +1,4 @@
-package day2;
+package day2.util;
 
 public class Task2 {
 	static int factWithRecursion(int n) {
