@@ -1,4 +1,5 @@
 package day4;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class Main {
@@ -11,8 +12,14 @@ class Main {
 			System.out.println("Class Exists");
 		}
 		catch (ClassNotFoundException e) {
-			System.out.println("Class does not exist check the name of the class");
+			System.out.println("ClassNotFound Exception Occured (Checked)");
 		}
-		new Thread(() -> System.out.print("Functional Interface in java library")).start();
+		try {
+			System.out.print("Enter a Number : ");
+			int num = sc.nextInt();
+		} catch (InputMismatchException e){
+			System.out.println("InputMismatchException Exception Occured (UnChecked)");
+		}
+		new Thread(() -> System.out.print("Using Built-in Functional Interface (Thread) from java library")).start();
 	}
 }

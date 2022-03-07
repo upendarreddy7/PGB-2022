@@ -24,8 +24,7 @@ public class custom_input extends Training{
 	
 	static void validate(String name) throws InvalidNameException{    
 		if(name.length() <= 2){  
-			System.out.println("'"+name+"'");
-			throw new InvalidNameException("Invalid Name!! Try again");
+			throw new InvalidNameException("Custom Exception : name '"+name+"' is too small");
 	    }
 	}    
 
@@ -75,26 +74,35 @@ public class custom_input extends Training{
 			}
 		System.out.println("Total Marks : "+averageMarks(Training.Employeelist.get(sno)));
 		input.nextLine();
-		Training.Employeelist.get(sno).assigntask("Test");
-	    Training.Employeelist.get(sno).listTasks();
+		System.out.println();
+		// Training.Employeelist.get(sno).assigntask("Test");
+	    // Training.Employeelist.get(sno).listTasks();
 	}
 	
 	public static void main(String[] args) {
 	    for(int i = 0;i<30;i++) {
 	    	try {
 		    	if(i == 2) {
+		    		System.out.println("ArithmeticException Exception : ");
 		    		Employee_data(0, empName);
 		    	} else if (i == 1) {
+		    		System.out.println("NullPointer Exception : ");
 		    		Employee_data(empid, null);
+		    	} else if (i == 3){
+		    		System.out.println("Enter characters in ID To get NumberFormat Exception");
+		    		Employee_data(empid, empName);
 		    	} else {
 		    		Employee_data(empid, empName);
 		    	}
 	    	} 
 	    	catch (NumberFormatException e) {
-	    		System.out.println("Enter a valid ID!!");
+	    		System.out.println("Enter a valid ID!! (NumberFormat Exception Occured)");
 	    	}
 	    	catch (NullPointerException e) {
-	    		System.out.println("NullPointerException Occured");
+	    		System.out.println("Forced NullPointerException Occured\n");
+	    	}
+	    	catch (ArithmeticException e) {
+	    		System.out.println("Forced ArithmeticException Occured\n");
 	    	}
 	    	catch (InvalidNameException e) {
 	    		continue;
