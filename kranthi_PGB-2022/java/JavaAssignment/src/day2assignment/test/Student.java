@@ -1,4 +1,4 @@
-package test;
+package day2assignment.test;
 
 public class Student {
 	private int rno,age;

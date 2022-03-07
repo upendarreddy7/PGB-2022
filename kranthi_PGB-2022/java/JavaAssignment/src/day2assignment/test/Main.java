@@ -1,5 +1,6 @@
-package test;
-import util.Fact;
+package day2assignment.test;
+
+import day2assignment.util.Fact;
 
 public class Main {
 	public static void main(String args[]) {
@@ -8,9 +9,9 @@ public class Main {
 		st1.override("kanthi", 3);
 		st1.override("kanthi", 3,21);
 		
-		Fact f=new Fact();
-		System.out.println(f.factorialrec(5));
-		System.out.println(f.factorial(4));
+		
+		System.out.println(Fact.factorialrec(5));
+		System.out.println(Fact.factorial(4));
 		
 		
 	}
