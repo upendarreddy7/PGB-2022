@@ -6,7 +6,7 @@ public class student {
     private int number; // Private attribute for getter and setter
     String name;
 
-    student(){
+    public student(){
     	// Default Constructor, Does Nothing
     }
     
