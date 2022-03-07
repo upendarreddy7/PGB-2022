@@ -1,16 +1,17 @@
 package day4;
 import day3.*;
 
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
+// Custom Exception
 final class InvalidNameException extends Exception {
 	public InvalidNameException(String str) {
 		 System.out.println(str); 
 	}
 };
 
+// Custom Functional Interface
 interface Average {
 	abstract double calculate(Employee e);
 }
@@ -29,6 +30,7 @@ public class custom_input extends Training{
 	}    
 
 	static String TakeEmpName(String empName) throws NullPointerException, InvalidNameException{
+		// Take input from console
 		System.out.print("Enter Name : ");
 	    String name = input.nextLine();
 	    if (!empName.equals(name)){
@@ -49,12 +51,15 @@ public class custom_input extends Training{
 	    return sno;
 	}
 
+	// Custom Functional Interface Using Lambda Expressions
 	public static double averageMarks(Employee emp) {
 		Average a = (Employee e) -> {
 			if(!e.marksSheet.isEmpty()) {
 				for (Map.Entry <String, Integer>topic : e.marksSheet.entrySet()) {
-			        sum += topic.getValue();
+			        // Addition of integers
+					sum += topic.getValue();
 			    }
+				// Calculate the average
 			    return (sum.doubleValue() / e.marksSheet.size());
 			}
 			return sum;
@@ -75,17 +80,17 @@ public class custom_input extends Training{
 		System.out.println("Total Marks : "+averageMarks(Training.Employeelist.get(sno)));
 		input.nextLine();
 		System.out.println();
-		// Training.Employeelist.get(sno).assigntask("Test");
-	    // Training.Employeelist.get(sno).listTasks();
 	}
 	
 	public static void main(String[] args) {
 	    for(int i = 0;i<30;i++) {
 	    	try {
 		    	if(i == 2) {
+		    		// Code to generate ArithmeticException Exception
 		    		System.out.println("ArithmeticException Exception : ");
 		    		Employee_data(0, empName);
 		    	} else if (i == 1) {
+		    		// Code to generate NullPointer Exception
 		    		System.out.println("NullPointer Exception : ");
 		    		Employee_data(empid, null);
 		    	} else if (i == 3){
